@@ -1,22 +1,23 @@
+from turtle import * #This line imports turtle, which is a graphics library. After importing turtle, one can draw designs and customize their screen to display different shapes and patterns using the colour and pensize function. In addition, one can move the turtle, which is the focal point of the screen, forward, backwards, right and left. 
+
+from freegames import square, vector #This line imports a square and vector function from freegames, which is a Python module. This module contains simple games and functions that allows one to create a simple game of their own. The square function creates a square in which the user plays the game. The vector function controls the position and movement of vectors within the game. In this case, the vector would control the snake and the food, for example.
+
 from random import randrange
-from turtle import *
 
-from freegames import square, vector
-
-food = vector(0, 0)
-snake = [vector(10, 0)]
-aim = vector(0, -10)
+food = vector(0, 0) #This line creates a vector at the coordinates (0,0). "Food" represents a position in the game that the snake must pass in order to eat it and grow.
+snake = [vector(10, 0)] #This line creates a list called snake with the vector at the coordinates (10,0). The list "snake" exists as a list so that more items can be added as the snake consumes the "food" on the screen.
+aim = vector(0, -10) #This line creates a vector at the coordinates (0,10). The variable aim contains the direction in which the snake moves. The coordinates (0,-10) implies that the snake moves down ten units as the game is started.
 
 
-def change(x, y):
+def change(x, y): #This function changes the direction that the snake moves in. It moves in respect to the x and y axes. When this function is called, the position of the snake, in (x,y) coordinates, is updated in the game.
     """Change snake direction."""
-    aim.x = x
-    aim.y = y
+    aim.x = x #This changes the snakes x-direction. If the snake moves 15 units right, the overall change in the function would be (15,0).
+    aim.y = y #This changes the snakes y-direction. If the snake moves 15 units up, the overall change in the function would be (0,15).
 
 
-def inside(head):
+def inside(head): #This function determines if the head of the snake is within the boundaries (x and y coordinates below) of the game.
     """Return True if head inside boundaries."""
-    return -200 < head.x < 190 and -200 < head.y < 190
+    return -200 < head.x < 190 and -200 < head.y < 190 #This function checks if the head of the snake is between the x coordinates (-200,190) and y coordinates (-200,190).
 #Kennice
 
 def move():
