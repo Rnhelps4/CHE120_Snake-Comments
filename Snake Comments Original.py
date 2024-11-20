@@ -33,19 +33,19 @@ def move():
 
     if head == food:
         print('Snake:', len(snake)) #Daniella 
-        food.x = randrange(-15, 15) * 10 #Set a new random x-coordinate for food in the range of (-15,15). This will pick a random integer is the range, multiplying it by 10 so it aligns with the snakes grid
-        food.y = randrange(-15, 15) * 10 #set anew random y coordinate for the food (same thing as line above, line ensures the food is somehwere on teh game grid)
+        food.x = randrange(-15, 15) * 10 #RH: Set a new random x-coordinate for food in the range of (-15,15). This will pick a random integer is the range, multiplying it by 10 so it aligns with the snakes grid
+        food.y = randrange(-15, 15) * 10 #RH: set anew random y coordinate for the food (same thing as line above, line ensures the food is somehwere on teh game grid)
     else:
-        snake.pop(0) # remove the tail segment (first element in the snake list) if the food is not eaten (else condition)
+        snake.pop(0) #RH: remove the tail segment (first element in the snake list) if the food is not eaten (else condition)
 
-    clear() #Clear the screen for drawing allows for no overlap of past drawings by erasing everything on the screen so the game can update the snake and food position 
-#for loop that loops through every segment in the snake list) to draw each segment of the snake
+    clear() #RH: Clear the screen for drawing allows for no overlap of past drawings by erasing everything on the screen so the game can update the snake and food position 
+#RH: for loop that loops through every segment in the snake list) to draw each segment of the snake
     for body in snake:
-        square(body.x, body.y, 9, 'black') #Draw the snake as a black square by assigning the x and y coordinates with 9 
+        square(body.x, body.y, 9, 'black') #RH: Draw the snake as a black square by assigning the x and y coordinates with 9 
 
-    square(food.x, food.y, 9, 'green')#draw the food as a green square 
-    update() #update display to show the new positions 
-    ontimer(move, 100) #schedule the next move after 100millisseconds
+    square(food.x, food.y, 9, 'green')#RH: draw the food as a green square 
+    update() #RH: update display to show the new positions 
+    ontimer(move, 100) #RH: schedule the next move after 100millisseconds
 #Rileigh 
 #Victoria 
 setup(420, 420, 370, 0)
