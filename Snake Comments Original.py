@@ -1,3 +1,8 @@
+#Kennice Pang: KP
+#Daniella Rice: DR
+#Rileigh Helps: RH
+#Victoria Ho: VH
+
 from turtle import * #KP: This line imports turtle, which is a graphics library. After importing turtle, one can draw designs and customize their screen to display different shapes and patterns using the colour and pensize function. In addition, one can move the turtle, which is the focal point of the screen, forward, backwards, right and left. 
 
 from freegames import square, vector #KP: This line imports a square and vector function from freegames, which is a Python module. This module contains simple games and functions that allows one to create a simple game of their own. The square function creates a square in which the user plays the game. The vector function controls the position and movement of vectors within the game. In this case, the vector would control the snake and the food, for example.
