@@ -29,7 +29,7 @@ def move(): #DR: defining move function (creating new function object "move"), w
         update() #DR: updates display (to show the square)
         return #DR: terminates function (and game)
 
-    snake.append(head) #DR: if neither of the two if statements condition are true, head is added to snake using the built-in list append() method
+    snake.append(head) #DR: if neither of the two if statement conditions are true, head is added to snake using the built-in list append() method
 
     if head == food: #DR: if the head vector is the same as the food vector, the code in the indented block is executed
         print('Snake:', len(snake)) #Daniella 
