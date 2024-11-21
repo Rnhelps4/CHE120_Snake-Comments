@@ -32,7 +32,7 @@ def move(): #DR: defining move function (creating new function object "move"), w
     snake.append(head) #DR: if neither of the two if statement conditions are true, head is added to snake using the built-in list append() method
 
     if head == food: #DR: if the head vector is the same as the food vector, the code in the indented block is executed
-        print('Snake:', len(snake)) #DR: print the length of the snake to the console 
+        print('Snake:', len(snake)) #DR: printing the length of the snake to the console 
         food.x = randrange(-15, 15) * 10 #RH: Set a new random x-coordinate for food in the range of (-15,15). This will pick a random integer is the range, multiplying it by 10 so it aligns with the snakes grid
         food.y = randrange(-15, 15) * 10 #RH: set anew random y coordinate for the food (same thing as line above, line ensures the food is somehwere on teh game grid)
     else:
