@@ -20,19 +20,19 @@ def inside(head): #This function determines if the head of the snake is within t
     return -200 < head.x < 190 and -200 < head.y < 190 #This function checks if the head of the snake is between the x coordinates (-200,190) and y coordinates (-200,190).
 #Kennice
 
-def move():
+def move(): #DR: defining move function (creating new function object "move"), which doesn't take any arguments
     """Move snake forward one segment."""
-    head = snake[-1].copy()
-    head.move(aim)
+    head = snake[-1].copy() #DR: creating a copy of the last vector stored in the "snake" list using the built-in list copy() method, and assigning it to the variable "head"
+    head.move(aim) #DR: changing the head's position by adding the aim vector using the  move() method of the freegames module vector class
 
-    if not inside(head) or head in snake:
-        square(head.x, head.y, 9, 'red')
-        update()
-        return
+    if not inside(head) or head in snake: #DR: if the head leaves the boundaries or touches the body (i.e. if inside(head) returns False or the head vector is in snake), the code in the indented block is executed
+        square(head.x, head.y, 9, 'red') #DR: creates a red square of size 9 at the head's position using the freegames module square() function
+        update() #DR: updates display (to show the square)
+        return #DR: terminates function (and game)
 
-    snake.append(head)
+    snake.append(head) #DR: if neither of the two if statements condition are true, head is added to snake using the built-in list append() method
 
-    if head == food:
+    if head == food: #DR: if the head vector is the same as the food vector, the code in the indented block is executed
         print('Snake:', len(snake)) #Daniella 
         food.x = randrange(-15, 15) * 10 #RH: Set a new random x-coordinate for food in the range of (-15,15). This will pick a random integer is the range, multiplying it by 10 so it aligns with the snakes grid
         food.y = randrange(-15, 15) * 10 #RH: set anew random y coordinate for the food (same thing as line above, line ensures the food is somehwere on teh game grid)
